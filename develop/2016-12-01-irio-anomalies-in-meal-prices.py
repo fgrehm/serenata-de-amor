@@ -337,6 +337,27 @@ outliers = data_with_threshold[~is_hotel_reimbursement]     .query('(congresspeo
 print(len(outliers), outliers['total_net_value'].sum())
 
 
+# ## Foursquare
+
+# In[45]:
+
+foursquare = pd.read_csv('../data/2016-12-02-foursquare-companies.xz',
+                         low_memory=False)
+foursquare.head()
+
+
+# In[48]:
+
+foursquare.iloc[0]
+
+
+# In[57]:
+
+print(foursquare['price.tier'].notnull().sum(),
+      foursquare['price.tier'].notnull().sum() / len(companies),
+      foursquare.query('confirmed_match == True')['price.tier'].notnull().sum() / len(companies))
+
+
 # In[ ]:
 
 

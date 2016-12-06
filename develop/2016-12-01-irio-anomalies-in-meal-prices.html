@@ -14175,6 +14175,316 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Foursquare">Foursquare<a class="anchor-link" href="#Foursquare">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">foursquare</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/2016-12-02-foursquare-companies.xz&#39;</span><span class="p">,</span>
+                         <span class="n">low_memory</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">foursquare</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[45]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>allowMenuUrlEdit</th>
+      <th>attributes.groups</th>
+      <th>beenHere.count</th>
+      <th>beenHere.lastCheckinExpiredAt</th>
+      <th>beenHere.marked</th>
+      <th>beenHere.unconfirmedCount</th>
+      <th>bestPhoto.createdAt</th>
+      <th>bestPhoto.hasSticker</th>
+      <th>bestPhoto.height</th>
+      <th>bestPhoto.id</th>
+      <th>...</th>
+      <th>tags</th>
+      <th>timeZone</th>
+      <th>tips.count</th>
+      <th>tips.groups</th>
+      <th>trade_name</th>
+      <th>url</th>
+      <th>venueChains</th>
+      <th>venuePage.id</th>
+      <th>venueRatingBlacklisted</th>
+      <th>verified</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>True</td>
+      <td>[{'count': 1, 'items': [{'displayValue': '$', ...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>False</td>
+      <td>0.0</td>
+      <td>1.331568e+09</td>
+      <td>NaN</td>
+      <td>720.0</td>
+      <td>4f5e1d2de4b024154482f75c</td>
+      <td>...</td>
+      <td>[]</td>
+      <td>America/Sao_Paulo</td>
+      <td>11.0</td>
+      <td>[{'count': 11, 'items': [{'lang': 'pt', 'canon...</td>
+      <td>BOB'S URUGUAI</td>
+      <td>http://www.bobs.com.br</td>
+      <td>[{'logo': {'prefix': 'https://irs3.4sqi.net/im...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>True</td>
+      <td>[{'count': 1, 'items': [{'displayValue': '$', ...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>False</td>
+      <td>0.0</td>
+      <td>1.476654e+09</td>
+      <td>NaN</td>
+      <td>1920.0</td>
+      <td>5803f2ecd67c4ebf6a907d49</td>
+      <td>...</td>
+      <td>[]</td>
+      <td>America/Sao_Paulo</td>
+      <td>1.0</td>
+      <td>[{'count': 1, 'items': [{'lang': 'pt', 'canoni...</td>
+      <td>HAMBURGUERIA ROMANA</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>True</td>
+      <td>[{'count': 1, 'items': [{'displayValue': '$', ...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>False</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>[]</td>
+      <td>America/Sao_Paulo</td>
+      <td>4.0</td>
+      <td>[{'count': 4, 'items': [{'lang': 'pt', 'canoni...</td>
+      <td>PIZZA HUT</td>
+      <td>NaN</td>
+      <td>[{'logo': {'prefix': 'https://irs0.4sqi.net/im...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>True</td>
+      <td>[{'count': 1, 'items': [{'displayValue': '$', ...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>False</td>
+      <td>0.0</td>
+      <td>1.363381e+09</td>
+      <td>NaN</td>
+      <td>720.0</td>
+      <td>51438bb4e4b0702d1a537f5e</td>
+      <td>...</td>
+      <td>[]</td>
+      <td>America/Sao_Paulo</td>
+      <td>0.0</td>
+      <td>[{'count': 0, 'items': [], 'name': 'All tips',...</td>
+      <td>LIFE CONVENIENCIA</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>True</td>
+      <td>[{'count': 1, 'items': [{'displayValue': '$', ...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>False</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>[]</td>
+      <td>America/Sao_Paulo</td>
+      <td>1.0</td>
+      <td>[{'count': 1, 'items': [{'lang': 'pt', 'canoni...</td>
+      <td>CAFE KALDI</td>
+      <td>NaN</td>
+      <td>[]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 156 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">foursquare</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[48]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>allowMenuUrlEdit                                                              True
+attributes.groups                [{&#39;count&#39;: 1, &#39;items&#39;: [{&#39;displayValue&#39;: &#39;$&#39;, ...
+beenHere.count                                                                   0
+beenHere.lastCheckinExpiredAt                                                    0
+beenHere.marked                                                              False
+beenHere.unconfirmedCount                                                        0
+bestPhoto.createdAt                                                    1.33157e+09
+bestPhoto.hasSticker                                                           NaN
+bestPhoto.height                                                               720
+bestPhoto.id                                              4f5e1d2de4b024154482f75c
+bestPhoto.prefix                                https://irs2.4sqi.net/img/general/
+bestPhoto.source.name                                       Foursquare for Android
+bestPhoto.source.url                     https://foursquare.com/download/#/android
+bestPhoto.suffix                  /Pxv3oigVAkY7-nkm0EbYuT2x7h9PIWlZVS1KTHMRGsA.jpg
+bestPhoto.visibility                                                        public
+bestPhoto.width                                                                540
+canonicalUrl                     https://foursquare.com/v/bobs/4cd328e7607a6dcb...
+categories                       [{&#39;pluralName&#39;: &#39;Fast Food Restaurants&#39;, &#39;icon...
+clean_cnpj                                                          14193794000161
+closed                                                                         NaN
+cnpj                                                            14.193.794/0001-61
+confirmed_match                                                               True
+contact.facebook                                                               NaN
+contact.facebookName                                                           NaN
+contact.facebookUsername                                                       NaN
+contact.formattedPhone                                                         NaN
+contact.phone                                                                  NaN
+contact.twitter                                                         bobsbrasil
+createdAt                                                              1.28891e+09
+description                                                  Não dá pra controlar.
+                                                       ...                        
+popular.isOpen                                                               False
+popular.status                                                                 NaN
+popular.timeframes               [{&#39;days&#39;: &#39;Today&#39;, &#39;open&#39;: [{&#39;renderedTime&#39;: &#39;...
+price.currency                                                                   $
+price.message                                                                Cheap
+price.tier                                                                       1
+rating                                                                         4.8
+ratingColor                                                                 FF6701
+ratingSignals                                                                   48
+reasons.count                                                                    0
+reasons.items                                                                   []
+scraped_at                                              2016-11-29T02:49:19.725351
+shortUrl                                                     http://4sq.com/9K7KJW
+specials.count                                                                   0
+specials.items                                                                  []
+stats.checkinsCount                                                            923
+stats.tipCount                                                                  11
+stats.usersCount                                                               450
+stats.visitsCount                                                             1054
+storeId                                                                     Tijuca
+tags                                                                            []
+timeZone                                                         America/Sao_Paulo
+tips.count                                                                      11
+tips.groups                      [{&#39;count&#39;: 11, &#39;items&#39;: [{&#39;lang&#39;: &#39;pt&#39;, &#39;canon...
+trade_name                                                           BOB&#39;S URUGUAI
+url                                                         http://www.bobs.com.br
+venueChains                      [{&#39;logo&#39;: {&#39;prefix&#39;: &#39;https://irs3.4sqi.net/im...
+venuePage.id                                                                   NaN
+venueRatingBlacklisted                                                         NaN
+verified                                                                      True
+Name: 0, dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">foursquare</span><span class="p">[</span><span class="s1">&#39;price.tier&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>
+      <span class="n">foursquare</span><span class="p">[</span><span class="s1">&#39;price.tier&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">companies</span><span class="p">),</span>
+      <span class="n">foursquare</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;confirmed_match == True&#39;</span><span class="p">)[</span><span class="s1">&#39;price.tier&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">companies</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>8321 0.461944151446 0.16560262033
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
