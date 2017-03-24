@@ -10,6 +10,9 @@ services:
     volumes:
       - .:/notebook
     working_dir: /notebook
+    environment:
+      - 'GRANT_SUDO=yes'
+    user: root
   neo4j:
     image: neo4j:3.1.1
     ports:
